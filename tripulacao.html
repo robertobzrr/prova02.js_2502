@@ -34,17 +34,68 @@
     <main>
       <div class="pagtitle">
         <div class="bgtitle"></div>
-        <h2>Tripulação</h2>
+        <h2>Área de Login</h2>
       </div>
-      <section class="trip">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus ex eligendi doloremque obcaecati, esse tempore. Enim, repellendus eum magni sint ex sed aut nihil, tempora maiores tempore est nulla incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam eveniet quidem odit impedit nam? Velit amet quia culpa debitis maxime error dolore, harum assumenda omnis recusandae deleniti adipisci tenetur!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sed deserunt! Impedit accusantium sapiente iste officia accusamus iure aut id sed nobis, dignissimos saepe perferendis sunt dolores totam pariatur in.</p>
-      </section>
+
+      <form>
+        <div class="entry">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+        </div>
+
+        <div class="entry">
+          <label for="senha">Senha</label>
+          <input type="text" id="senha" />
+        </div>
+      </form>
+
+      <div class="buttons">
+        <button onclick="realizarLogin()" class="button">Enviar</button>
+      </div>
     </main>
   </div>
 
     <footer>
       <p>© 2023 por Luxo aluguel de iates</p>
     </footer>
+
+
+
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/api.js"></script>
+
+    <script>
+
+
+      function realizarLogin(){
+
+
+      var emailDigitado = document.getElementById("email").value;
+      var senhaDigitada = document.getElementById("senha").value;
+
+
+      var objLoginSenha = {
+        email: emailDigitado,
+        senha: senhaDigitada
+      } 
+
+      var validacao = validarUsuario(objLoginSenha);
+
+      
+      if (validacao === true) {
+        alert("Login e senha corretos!!");
+      } else {
+        alert("Usuário ou senha inválido.");
+      }
+
+      }
+
+
+    </script>
+
+
+
+
   </body>
 </html>
