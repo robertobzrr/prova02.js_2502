@@ -25,7 +25,7 @@
           <li><a href="index.html">Página inicial</a></li>
           <li><a href="aluguel.html">Aluguel de iates</a></li>
           <li><a href="destinos.html">Destinos</a></li>
-          <li><a href="tripulacao.html" class="accent">Tripulação</a></li>
+          <li><a href="login.html" class="accent">Login</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
@@ -84,7 +84,9 @@
 
       
       if (validacao === true) {
+        window.location.href = 'admin.html';
         alert("Login e senha corretos!!");
+
       } else {
         alert("Usuário ou senha inválido.");
       }
