@@ -49,8 +49,8 @@
         </div>
 
         <div class="entry">
-          <label for="msg">Mensagem</label>
-          <textarea cols="40" rows="7" id="msg"></textarea>
+          <label for="mensagem">Mensagem</label>
+          <textarea cols="40" rows="7" id="mensagem"></textarea>
         </div>
       </form>
 
@@ -76,12 +76,12 @@
 
       var nomeDigitado = document.getElementById("nome").value;
       var emailDigitado = document.getElementById("email").value;
-      var textoDigital = document.getElementById("msg").value;
+      var textoDigital = document.getElementById("mensagem").value;
 
       var mensagem = {
         nome: nomeDigitado,
         email: emailDigitado,
-        msg: textoDigital
+        mensagem: textoDigital
       }
 
 
@@ -89,6 +89,10 @@
 
       alert('Mensagem recebida!!');
 
+
+      document.getElementById("nome").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("mensagem").value = "";
 
       }
 

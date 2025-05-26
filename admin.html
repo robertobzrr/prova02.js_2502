@@ -38,6 +38,27 @@
       </div>
 
 
+      <div style="text-align: center;">
+        <p >
+            Bem-vindo a área do Admin.
+            <br><br>
+            Escolha o que deseja fazer nas opções abaixo:
+        </p>
+        <br><br><br>
+      </div>
+
+
+      <div class="buttons">
+        <button onclick="verMensagens()" class="button">Mensagens de contato</button>
+      </div>
+            
+      <br>
+
+      <div class="buttons">
+        <button onclick="sairFunction()" class="button">Sair</button>
+      </div>
+
+
     </main>
   </div>
 
@@ -46,10 +67,29 @@
     </footer>
 
 
-
-
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/api.js"></script>
+
+
+
+    <script>
+        
+
+        function sairFunction(){
+            window.location.href = 'login.html';
+        }
+
+        function verMensagens(){
+            window.location.href = 'mensagem.html';
+        }
+
+
+
+
+
+
+
+    </script>
 
 
 

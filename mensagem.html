@@ -1,16 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxo - Tripulação</title>
+    <link rel="shortcut icon" href="images/barco2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/default.css" />
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+            vertical-align: top;
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+        }
+        #tabelaMensagens {
+            margin: 0 auto; 
+            width: 80%; 
+            background-color: #fff; 
+            table-layout: fixed;
+}
+     </style>
+  </head>
+
+  <body>
+    <div class="page">
+    <header>
+      <div id="title">
+        <img src="images/barco1.png" alt="ícone de barco" />
+        <div class="headtitle">
+          <h1>Luxo</h1>
+          <h2>Aluguel de iates</h2>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="navmenu">
+          <li><a href="index.html">Página inicial</a></li>
+          <li><a href="aluguel.html">Aluguel de iates</a></li>
+          <li><a href="destinos.html">Destinos</a></li>
+          <li><a href="login.html" class="accent">Login</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="pagtitle">
+        <div class="bgtitle"></div>
+        <h2>Mensagens recebidas</h2>
+      </div>
+
+
+      <div style="text-align: center;">
+        <p >
+            Área de mensagens recebidas para contato.
+            <br><br>
+            Escolha o que deseja fazer nas opções abaixo:
+        </p>
+        <br><br><br>
+      </div>
 
 
 
 
-    
-</body>
+      <br>
+      <div class="buttons">
+        <button onclick="carregarTabelaMensagens()" class="button">Obter Mensagens</button>
+      </div>
+      <br>
+
+      <div class="buttons">
+        <button onclick="voltarFunction()" class="button">Voltar</button>
+      </div>
+
+
+      <br><br>
+      <h3 style="text-align: center;">Mensagens Recebidas:</h3><br>
+      <table id="tabelaMensagens">
+          <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Mensagem</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+      </table>
+      <br><br><br><br>
+
+
+
+
+
+    </main>
+  </div>
+
+    <footer>
+      <p>© 2023 por Luxo aluguel de iates</p>
+    </footer>
+
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/api.js"></script>
+
+
+    <script>
+        
+
+        function voltarFunction(){
+            window.location.href = 'admin.html';
+        }
+
+        function carregarTabelaMensagens() {
+            const mensagens = obterMensagens();
+            const corpoTabela = document.querySelector("#tabelaMensagens tbody");
+
+            mensagens.forEach(msg => {
+                const linha = document.createElement("tr");
+
+                const celulaNome = document.createElement("td");
+                celulaNome.textContent = msg.nome;
+                linha.appendChild(celulaNome);
+
+                const celulaEmail = document.createElement("td");
+                celulaEmail.textContent = msg.email;
+                linha.appendChild(celulaEmail);
+
+                const celulaMensagem = document.createElement("td");
+                celulaMensagem.textContent = msg.mensagem;
+                linha.appendChild(celulaMensagem);
+
+                corpoTabela.appendChild(linha);
+            });
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+  </body>
 </html>
